@@ -1,0 +1,32 @@
+{
+  "name": "w-data-collector",
+  "version": "1.0.1",
+  "description": "A data of collector.",
+  "main": "dist/w-data-collector.umd.js",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "wsemi": "^1.6.19"
+  },
+  "devDependencies": {
+    "w-package-tools": "^1.0.59"
+  },
+  "scripts": {
+    "test": "mocha --parallel --timeout 60000 --experimental-modules --es-module-specifier-resolution=node",
+    "deploy": "gh-pages -d docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuda-lyu/w-data-collector.git"
+  },
+  "keywords": [
+    "package",
+    "tool",
+    "collector"
+  ],
+  "author": "yuda-lyu(semisphere)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuda-lyu/w-data-collector/issues"
+  },
+  "homepage": "https://github.com/yuda-lyu/w-data-collector#readme"
+}
