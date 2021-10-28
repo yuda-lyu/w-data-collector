@@ -51,7 +51,7 @@ function genModels(ds, opt = {}) {
  * import genTestdata from 'w-data-collector/src/genTestdata.mjs'
  * import ds from './index.mjs'
  * import { woItems } from '../../server/mOrm.mjs'
- * 
+ *
  * genTestdata(ds, woItems, {})
  * // => genTestdata done
  *

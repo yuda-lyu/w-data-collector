@@ -40,7 +40,7 @@ function genNames(ms) {
  * @example
  *
  * import genIndex from 'w-data-collector/src/genIndex.mjs'
- * 
+ *
  * genIndex('./src/schema/tables', './src/schema', {})
  * // => genIndex done
  *
@@ -56,7 +56,7 @@ function genIndex(fdSrc, fdIndex, opt = {}) {
     //fnIndex
     let fnIndex = get(opt, 'fnIndex')
     if (!isestr(fnIndex)) {
-        fnIndex =  'index.mjs'
+        fnIndex = 'index.mjs'
     }
 
     //fsTreeFolder
