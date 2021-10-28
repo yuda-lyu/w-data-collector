@@ -1,5 +1,5 @@
 # w-data-collector
-A data of collector.
+An collector for data.
 
 ![language](https://img.shields.io/badge/language-JavaScript-orange.svg) 
 [![npm version](http://img.shields.io/npm/v/w-data-collector.svg?style=flat)](https://npmjs.org/package/w-data-collector) 
