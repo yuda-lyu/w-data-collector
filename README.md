@@ -19,7 +19,7 @@ npm i w-data-collector
 ```
 
 #### Example for genIndex:
-> **Link:** [[dev source code](https://github.com/yuda-lyu/w-cluster/blob/master/gi.mjs)]
+> **Link:** [[dev source code](https://github.com/yuda-lyu/w-data-collector/blob/master/gi.mjs)]
 ```alias
 
 import genIndex from 'w-data-collector/src/genIndex.mjs'
@@ -27,10 +27,10 @@ import genIndex from 'w-data-collector/src/genIndex.mjs'
 genIndex('./src/schema/tables', './src/schema', {})
 // => genIndex done
 
-``
+```
 
 #### Example for genTestdata:
-> **Link:** [[dev source code](https://github.com/yuda-lyu/w-cluster/blob/master/gt.mjs)]
+> **Link:** [[dev source code](https://github.com/yuda-lyu/w-data-collector/blob/master/gt.mjs)]
 ```alias
 
 import genTestdata from 'w-data-collector/src/genTestdata.mjs'
@@ -40,4 +40,4 @@ import { woItems } from '../../server/mOrm.mjs'
 genTestdata(ds, woItems, {})
 // => genTestdata done
 
-``
+```
