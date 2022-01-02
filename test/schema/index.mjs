@@ -1,6 +1,6 @@
-import holeLabTabs from './tables/holeLabTabs.mjs'
-import holeLabTabsItems from './tables/holeLabTabsItems.mjs'
-import users from './tables/users.mjs'
+import {holeLabTabs} from './tables/holeLabTabs.mjs'
+import {holeLabTabsItems} from './tables/holeLabTabsItems.mjs'
+import {users} from './tables/users.mjs'
 import build from './src/build.mjs'
 
 
