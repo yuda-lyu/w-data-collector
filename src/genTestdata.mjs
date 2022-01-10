@@ -81,7 +81,7 @@ async function genTestdata(ds, wo, opt = {}) {
 
         //check
         if (isfun(ftest)) {
-            await ds[k].ftest(wo)
+            await ds[k].ftest(wo) //封裝ftest後會需要傳入wo, 以及改為async function
         }
 
     })

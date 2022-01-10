@@ -4,6 +4,7 @@ import get from 'lodash/get'
 import map from 'lodash/map'
 import join from 'lodash/join'
 import isestr from 'wsemi/src/isestr.mjs'
+import isbol from 'wsemi/src/isbol.mjs'
 import fsTreeFolder from 'wsemi/src/fsTreeFolder.mjs'
 import replace from 'wsemi/src/replace.mjs'
 
@@ -59,6 +60,18 @@ function genIndex(fdSrc, fdIndex, opt = {}) {
         fnIndex = 'index.mjs'
     }
 
+    //useSaveToDb
+    let useSaveToDb = get(opt, 'useSaveToDb')
+    if (!isbol(useSaveToDb)) {
+        useSaveToDb = true //自動儲存至mongodb或mssql等
+    }
+
+    //useCreateStorage
+    let useCreateStorage = get(opt, 'useCreateStorage')
+    if (!isbol(useCreateStorage)) {
+        useCreateStorage = false //儲存至關聯資料庫例如mssql時需要createStorage
+    }
+
     //fsTreeFolder
     let fps = fsTreeFolder(fdSrc)
     // console.log('fps', fps)
@@ -89,7 +102,7 @@ let cs = {
 //ds
 let ds = {}
 for (let k in cs) {
-    ds[k] = build(cs[k])
+    ds[k] = build(cs[k], { useSaveToDb: ${useSaveToDb}, useCreateStorage: ${useCreateStorage} })
 }
 
 
