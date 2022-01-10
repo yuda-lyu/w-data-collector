@@ -39,7 +39,7 @@ function genModels(ds, opt = {}) {
 /**
  * 由資料表收集物件ds與資料表控制物件wo產生測試資料，並儲存至資料庫
  *
- * @param {Object} ds 輸入資料表收集物件，ds也就是import由genIndex產生的index.mjs，其內各key代表各資料表，值代表各資料表設定與操作函數例如settings、funNew或funTestSave等
+ * @param {Object} ds 輸入資料表收集物件，ds也就是import由genIndex產生的index.mjs，其內各key代表各資料表，值代表各資料表設定與操作函數例如settings、funNew或funTestAndSave等
  * @param {Object} wo 輸入資料表控制物件，各key代表各資料表，值代表各資料表操作函數例如insert、save、del等
  * @param {Object} [opt={}] 輸入設定物件，預設{}
  * @param {Boolean} [opt.useGenModels=false] 輸入是否呼叫genModels，若資料庫與ORM為關聯資料庫時需設定為true，同時還需給予opt.genModelsByTabs。預設為false
@@ -73,15 +73,15 @@ async function genTestdata(ds, wo, opt = {}) {
     //ks
     let ks = keys(ds)
 
-    //funTestSave
+    //funTestAndSave
     await pmSeries(ks, async (k) => {
 
-        //funTestSave
-        let funTestSave = get(ds, `${k}.funTestSave`)
+        //funTestAndSave
+        let funTestAndSave = get(ds, `${k}.funTestAndSave`)
 
         //check
-        if (isfun(funTestSave)) {
-            await ds[k].funTestSave(wo) //funTestSave為封裝funTest後會需要傳入wo, 以及改為async function
+        if (isfun(funTestAndSave)) {
+            await ds[k].funTestAndSave(wo) //funTestAndSave為封裝funTest後會需要傳入wo, 以及改為async function
         }
 
     })

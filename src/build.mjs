@@ -57,9 +57,9 @@ function build(params, opt = {}) {
     }
 
     //check funTest
-    let funTestSave = null
+    let funTestAndSave = null
     if (isfun(funTest)) {
-        funTestSave = async(wo) => {
+        funTestAndSave = async(wo) => {
 
             //check
             if (!iseobj(wo)) {
@@ -129,7 +129,7 @@ function build(params, opt = {}) {
         parser,
         funNew,
         funTest,
-        funTestSave,
+        funTestAndSave,
     }
 
     return r
