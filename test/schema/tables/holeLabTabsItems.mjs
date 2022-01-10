@@ -280,7 +280,7 @@ let parser = {
     },
 }
 
-let fnew = (ndata = {}) => {
+let funNew = (ndata = {}) => {
     let o = dtmapping(ndata, keys(settings))
     o.id = genID()
     o.userIdUpdate = get(o, 'userId', '')
@@ -290,13 +290,13 @@ let fnew = (ndata = {}) => {
     return o
 }
 
-let ftest = () => {
+let funTest = () => {
     let r = map([
         ['BS-1', 'id-for-BH-1'],
         ['BS-2', 'id-for-BH-1'],
         ['BS-3', 'id-for-BH-2'],
     ], ([name, mappingId]) => {
-        let o = fnew({ userId: 'id-for-admin', mappingId })
+        let o = funNew({ userId: 'id-for-admin', mappingId })
         o.id = `id-for-${name}`
         return o
     })
@@ -310,8 +310,8 @@ let holeLabTabsItems = {
     tableNameEng,
     settings,
     parser,
-    fnew,
-    ftest,
+    funNew,
+    funTest,
 }
 
 

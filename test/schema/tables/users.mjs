@@ -58,7 +58,7 @@ let settings = {
     },
 }
 
-let fnew = (ndata = {}) => {
+let funNew = (ndata = {}) => {
     let o = dtmapping(ndata, keys(settings))
     o.id = genID()
     o.userIdUpdate = get(o, 'userId', '')
@@ -68,7 +68,7 @@ let fnew = (ndata = {}) => {
     return o
 }
 
-let ftest = () => {
+let funTest = () => {
     let r = map([
         '王小明',
         'peter',
@@ -76,7 +76,7 @@ let ftest = () => {
         'john',
         'admin',
     ], (name) => {
-        let o = fnew({ userId: 'id-for-admin' })
+        let o = funNew({ userId: 'id-for-admin' })
         o.id = `id-for-${name}`
         o.email = `${name}@example.com`
         o.from = '中興社'
@@ -94,8 +94,8 @@ let users = {
     tableNameCht,
     tableNameEng,
     settings,
-    fnew,
-    ftest,
+    funNew,
+    funTest,
 }
 
 

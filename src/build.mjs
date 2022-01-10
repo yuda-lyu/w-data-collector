@@ -24,7 +24,7 @@ function build(params, opt = {}) {
     }
 
     //params
-    let { keyTable, tableNameCht, tableNameEng, settings, parser, fnew, ftest } = params
+    let { keyTable, tableNameCht, tableNameEng, settings, parser, funNew, funTest } = params
 
     //check keyTable
     if (!isestr(keyTable)) {
@@ -51,15 +51,15 @@ function build(params, opt = {}) {
         parser = null
     }
 
-    //check fnew
-    if (!isfun(fnew)) {
-        fnew = null
+    //check funNew
+    if (!isfun(funNew)) {
+        funNew = null
     }
 
-    //check ftest
-    let _ftest = null
-    if (isfun(ftest)) {
-        _ftest = async(wo) => {
+    //check funTest
+    let funTestSave = null
+    if (isfun(funTest)) {
+        funTestSave = async(wo) => {
 
             //check
             if (!iseobj(wo)) {
@@ -75,10 +75,10 @@ function build(params, opt = {}) {
             //r
             let r = []
             try {
-                r = ftest()
+                r = funTest()
             }
             catch (err) {
-                console.log(`keyTable[${keyTable}] ftest catch`, err)
+                console.log(`keyTable[${keyTable}] funTest catch`, err)
                 throw new Error(err)
             }
 
@@ -127,8 +127,9 @@ function build(params, opt = {}) {
         kpType,
         kpHead,
         parser,
-        fnew,
-        ftest: _ftest,
+        funNew,
+        funTest,
+        funTestSave,
     }
 
     return r
