@@ -11,10 +11,16 @@ import isbol from 'wsemi/src/isbol.mjs'
 
 function build(params, opt = {}) {
 
+    //useSaveToDb
+    let useSaveToDb = get(opt, 'useSaveToDb')
+    if (!isbol(useSaveToDb)) {
+        useSaveToDb = true //自動儲存至mongodb或mssql等
+    }
+
     //useCreateStorage
     let useCreateStorage = get(opt, 'useCreateStorage')
     if (!isbol(useCreateStorage)) {
-        useCreateStorage = false
+        useCreateStorage = false //儲存至關聯資料庫例如mssql時需要createStorage
     }
 
     //params
@@ -81,13 +87,18 @@ function build(params, opt = {}) {
                 return
             }
 
-            //createStorage
-            if (useCreateStorage) {
-                await wo[keyTable].createStorage()
-            }
+            //useSaveToDb
+            if (useSaveToDb) {
 
-            //save
-            await wo[keyTable].save(r)
+                //createStorage
+                if (useCreateStorage) {
+                    await wo[keyTable].createStorage()
+                }
+
+                //save
+                await wo[keyTable].save(r)
+
+            }
 
         }
     }
