@@ -1,11 +1,11 @@
 {
   "name": "w-data-collector",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "An collector for data.",
   "main": "dist/w-data-collector.umd.js",
   "dependencies": {
     "lodash": "^4.17.21",
-    "wsemi": "^1.6.34"
+    "wsemi": "^1.6.39"
   },
   "devDependencies": {
     "w-package-tools": "^1.0.59"

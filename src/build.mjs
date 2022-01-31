@@ -7,6 +7,7 @@ import isestr from 'wsemi/src/isestr.mjs'
 import iseobj from 'wsemi/src/iseobj.mjs'
 import isfun from 'wsemi/src/isfun.mjs'
 import isbol from 'wsemi/src/isbol.mjs'
+import ispm from 'wsemi/src/ispm.mjs'
 
 
 function build(params, opt = {}) {
@@ -72,10 +73,13 @@ function build(params, opt = {}) {
                 throw new Error(`keyTable[${keyTable}] is not in wo`)
             }
 
-            //r
-            let r = []
+            //rs
+            let rs = []
             try {
-                r = funTest()
+                rs = funTest()
+                if (ispm(rs)) {
+                    rs = await rs
+                }
             }
             catch (err) {
                 console.log(`keyTable[${keyTable}] funTest catch`, err)
@@ -83,7 +87,7 @@ function build(params, opt = {}) {
             }
 
             //check
-            if (size(r) === 0) {
+            if (size(rs) === 0) {
                 return
             }
 
@@ -96,10 +100,11 @@ function build(params, opt = {}) {
                 }
 
                 //save
-                await wo[keyTable].save(r)
+                await wo[keyTable].save(rs)
 
             }
 
+            return rs
         }
     }
 
