@@ -51,7 +51,7 @@ function build(params, opt = {}) {
         funNew = null
     }
 
-    //check funTest
+    //funTestAndSave
     let funTestAndSave = null
     if (isfun(funTest)) {
         funTestAndSave = async(wo) => {
