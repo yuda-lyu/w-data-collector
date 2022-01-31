@@ -60,12 +60,6 @@ function genIndex(fdSrc, fdIndex, opt = {}) {
         fnIndex = 'index.mjs'
     }
 
-    //useSaveToDb
-    let useSaveToDb = get(opt, 'useSaveToDb')
-    if (!isbol(useSaveToDb)) {
-        useSaveToDb = true //自動儲存至mongodb或mssql等
-    }
-
     //useCreateStorage
     let useCreateStorage = get(opt, 'useCreateStorage')
     if (!isbol(useCreateStorage)) {
@@ -102,7 +96,7 @@ let cs = {
 //ds
 let ds = {}
 for (let k in cs) {
-    ds[k] = build(cs[k], { useSaveToDb: ${useSaveToDb}, useCreateStorage: ${useCreateStorage} })
+    ds[k] = build(cs[k], { useCreateStorage: ${useCreateStorage} })
 }
 
 

@@ -12,12 +12,6 @@ import ispm from 'wsemi/src/ispm.mjs'
 
 function build(params, opt = {}) {
 
-    //useSaveToDb
-    let useSaveToDb = get(opt, 'useSaveToDb')
-    if (!isbol(useSaveToDb)) {
-        useSaveToDb = true //自動儲存至mongodb或mssql等
-    }
-
     //useCreateStorage
     let useCreateStorage = get(opt, 'useCreateStorage')
     if (!isbol(useCreateStorage)) {
@@ -91,18 +85,13 @@ function build(params, opt = {}) {
                 return
             }
 
-            //useSaveToDb
-            if (useSaveToDb) {
-
-                //createStorage
-                if (useCreateStorage) {
-                    await wo[keyTable].createStorage()
-                }
-
-                //save
-                await wo[keyTable].save(rs)
-
+            //createStorage
+            if (useCreateStorage) {
+                await wo[keyTable].createStorage()
             }
+
+            //save
+            await wo[keyTable].save(rs)
 
             return rs
         }
