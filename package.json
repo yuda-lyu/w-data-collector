@@ -1,14 +1,13 @@
 {
   "name": "w-data-collector",
-  "version": "1.0.13",
-  "description": "An collector for data.",
+  "version": "1.0.14",
   "main": "dist/w-data-collector.umd.js",
   "dependencies": {
     "lodash": "^4.17.21",
-    "wsemi": "^1.6.54"
+    "wsemi": "^1.6.78"
   },
   "devDependencies": {
-    "w-package-tools": "^1.0.65"
+    "w-package-tools": "^1.0.66"
   },
   "scripts": {
     "test": "mocha --parallel --timeout 60000 --experimental-modules --es-module-specifier-resolution=node",
@@ -21,12 +20,9 @@
   "keywords": [
     "package",
     "tool",
+    "data",
     "collector"
   ],
   "author": "yuda-lyu(semisphere)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/yuda-lyu/w-data-collector/issues"
-  },
-  "homepage": "https://github.com/yuda-lyu/w-data-collector#readme"
+  "license": "MIT"
 }

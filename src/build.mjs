@@ -42,7 +42,7 @@ function build(params, opt = {}) {
     }
 
     //check parser
-    if (!isfun(parser)) {
+    if (!iseobj(parser)) {
         parser = null
     }
 
