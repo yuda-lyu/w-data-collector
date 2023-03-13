@@ -19,7 +19,7 @@ function build(params, opt = {}) {
     }
 
     //params
-    let { keyTable, tableNameCht, tableNameEng, settings, parser, funNew, funTest } = params
+    let { keyTable, tableNameCht, tableNameEng, settings, parser, funNew, funTest, ext } = params
 
     //check keyTable
     if (!isestr(keyTable)) {
@@ -39,6 +39,11 @@ function build(params, opt = {}) {
     //check settings
     if (!iseobj(settings)) {
         throw new Error('invalid settings')
+    }
+
+    //check ext
+    if (!iseobj(ext)) {
+        ext = null
     }
 
     //check parser
@@ -113,6 +118,7 @@ function build(params, opt = {}) {
 
     //r
     let r = {
+        ...params,
         keyTable,
         tableNameCht,
         tableNameEng,
@@ -124,6 +130,7 @@ function build(params, opt = {}) {
         funNew,
         funTest,
         funTestAndSave,
+        ext,
     }
 
     return r
