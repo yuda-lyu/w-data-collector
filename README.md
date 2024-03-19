@@ -6,6 +6,7 @@ An collector for data.
 [![license](https://img.shields.io/npm/l/w-data-collector.svg?style=flat)](https://npmjs.org/package/w-data-collector) 
 [![gzip file size](http://img.badgesize.io/yuda-lyu/w-data-collector/master/dist/w-data-collector.umd.js.svg?compression=gzip)](https://github.com/yuda-lyu/w-data-collector)
 [![npm download](https://img.shields.io/npm/dt/w-data-collector.svg)](https://npmjs.org/package/w-data-collector) 
+[![npm download](https://img.shields.io/npm/dm/w-data-collector.svg)](https://npmjs.org/package/w-data-collector) 
 [![jsdelivr download](https://img.shields.io/jsdelivr/npm/hm/w-data-collector.svg)](https://www.jsdelivr.com/package/npm/w-data-collector)
 
 ## Documentation
