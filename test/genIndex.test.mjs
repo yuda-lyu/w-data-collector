@@ -1,5 +1,5 @@
 import fs from 'fs'
-import _ from 'lodash'
+import _ from 'lodash-es'
 import assert from 'assert'
 import genIndex from '../src/genIndex.mjs'
 

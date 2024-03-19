@@ -1,9 +1,9 @@
 {
   "name": "w-data-collector",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "main": "dist/w-data-collector.umd.js",
   "dependencies": {
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "wsemi": "^1.7.47"
   },
   "devDependencies": {

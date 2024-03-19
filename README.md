@@ -14,7 +14,7 @@ To view documentation or get support, visit [docs](https://yuda-lyu.github.io/w-
 
 ## Installation
 ### Using npm(ES6 module):
-> **Note:** w-data-collector is mainly dependent on `lodash` and `wsemi`.
+> **Note:** w-data-collector is mainly dependent on `lodash-es` and `wsemi`.
 ```alias
 npm i w-data-collector
 ```
