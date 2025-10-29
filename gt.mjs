@@ -7,5 +7,5 @@ genTestdata(ds, woItems)
 
 
 //將gt.mjs放置於./src/schema/gt.mjs時使用指令:
-//node --experimental-modules --es-module-specifier-resolution=node ./src/schema/gt.mjs
+//node src/schema/gt.mjs
 
