@@ -8,6 +8,7 @@ import iseobj from 'wsemi/src/iseobj.mjs'
 import isfun from 'wsemi/src/isfun.mjs'
 import isbol from 'wsemi/src/isbol.mjs'
 import ispm from 'wsemi/src/ispm.mjs'
+import getItemsFail from './getItemsFail.mjs'
 
 
 function build(params, opt = {}) {
@@ -96,7 +97,13 @@ function build(params, opt = {}) {
             }
 
             //save
-            await wo[keyTable].save(rs)
+            let rss = await wo[keyTable].save(rs)
+
+            //check, 單筆失敗時整批仍resolve並以該筆ok為0回報, 須逐筆檢查
+            let fails = getItemsFail(rss, rs)
+            if (size(fails) > 0) {
+                throw new Error(`資料表[${keyTable}]寫入測試資料失敗: ${JSON.stringify(fails)}`)
+            }
 
             return rs
         }
