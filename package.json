@@ -1,6 +1,6 @@
 {
   "name": "w-data-collector",
-  "version": "1.0.44",
+  "version": "1.0.46",
   "main": "dist/w-data-collector.umd.js",
   "dependencies": {
     "wsemi": "^1.9.12"

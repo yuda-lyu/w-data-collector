@@ -41,7 +41,7 @@ describe(`build funTestAndSave`, function() {
         let d = build(genDef(() => [{ id: 't1', name: 'a' }, { id: 't2', name: 'b' }]))
         let { wo } = genWo(() => [okSave, genFailSave('E')])
         await assert.rejects(d.funTestAndSave(wo), (err) => {
-            assert.strict.equal(err.message, '資料表[tests]寫入測試資料失敗: [{"k":1,"id":"t2","err":"E"}]')
+            assert.strict.equal(err.message, 'failed to write test data into table[tests]: [{"k":1,"id":"t2","err":"E"}]')
             return true
         })
     })
@@ -72,7 +72,7 @@ describe(`build funTestAndSave`, function() {
         let d = build(genDef(() => ({ id: 't1', name: 'a' })))
         let { wo } = genWo(() => [genFailSave('E')])
         await assert.rejects(d.funTestAndSave(wo), (err) => {
-            assert.strict.equal(err.message, '資料表[tests]寫入測試資料失敗: [{"k":0,"id":"t1","err":"E"}]')
+            assert.strict.equal(err.message, 'failed to write test data into table[tests]: [{"k":0,"id":"t1","err":"E"}]')
             return true
         })
     })
@@ -101,7 +101,7 @@ describe(`build funTestAndSave`, function() {
         let d = build(genDef(() => [{ id: 't1' }]), { useCreateStorage: true })
         let { wo, calls } = genWo(() => [genFailSave('E')])
         await assert.rejects(d.funTestAndSave(wo), (err) => {
-            assert.strict.equal(err.message, '資料表[tests]寫入測試資料失敗: [{"k":0,"id":"t1","err":"E"}]')
+            assert.strict.equal(err.message, 'failed to write test data into table[tests]: [{"k":0,"id":"t1","err":"E"}]')
             return true
         })
         assert.strict.deepStrictEqual(calls, ['createStorage', 'save'])
@@ -121,7 +121,7 @@ describe(`build funTestAndSave`, function() {
         let d = build(genDef(async () => [{ id: 't1' }]))
         let { wo } = genWo(() => [genFailSave('E')])
         await assert.rejects(d.funTestAndSave(wo), (err) => {
-            assert.strict.equal(err.message, '資料表[tests]寫入測試資料失敗: [{"k":0,"id":"t1","err":"E"}]')
+            assert.strict.equal(err.message, 'failed to write test data into table[tests]: [{"k":0,"id":"t1","err":"E"}]')
             return true
         })
     })

@@ -37,7 +37,7 @@ describe(`genTestdata`, function() {
             },
         }
         await assert.rejects(genTestdata(genDs(), wo), (err) => {
-            assert.strict.equal(err.message, '資料表[tabA]寫入測試資料失敗: [{"k":1,"id":"a2","err":"E"}]')
+            assert.strict.equal(err.message, 'failed to write test data into table[tabA]: [{"k":1,"id":"a2","err":"E"}]')
             return true
         })
         assert.strict.deepStrictEqual(calls, ['tabA'])

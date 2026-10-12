@@ -102,7 +102,7 @@ function build(params, opt = {}) {
             //check, 單筆失敗時整批仍resolve並以該筆ok為0回報, 須逐筆檢查
             let fails = getItemsFail(rss, rs)
             if (size(fails) > 0) {
-                throw new Error(`資料表[${keyTable}]寫入測試資料失敗: ${JSON.stringify(fails)}`)
+                throw new Error(`failed to write test data into table[${keyTable}]: ${JSON.stringify(fails)}`)
             }
 
             return rs
