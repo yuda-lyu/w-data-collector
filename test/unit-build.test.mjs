@@ -2,7 +2,7 @@ import assert from 'assert'
 import build from '../src/build.mjs'
 
 
-//替身wo, 回傳形狀依w-orm系列規格(w-orm-lmdb/資料庫函數回傳定義計算.md T2、T4):
+//替身wo, 回傳形狀依w-orm系列規格(w-orm-lmdb/w-orm系列套件統一規格.md T2、T4):
 //save回傳與輸入等長保序之逐筆陣列, 單筆失敗時整批仍resolve, 該筆以ok為0並附err回報; 整批性錯誤則reject
 let okSave = { n: 1, nInserted: 1, nModified: 0, ok: 1 }
 let genFailSave = (err) => {

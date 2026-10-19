@@ -2,7 +2,7 @@ import assert from 'assert'
 import getItemsFail from '../src/getItemsFail.mjs'
 
 
-//逐筆結果之形狀依w-orm系列規格(w-orm-lmdb/資料庫函數回傳定義計算.md):
+//逐筆結果之形狀依w-orm系列規格(w-orm-lmdb/w-orm系列套件統一規格.md):
 //save與del回傳與輸入等長保序之陣列(T2), ok僅有1成功與0該筆失敗兩值, ok為0者附err(T4)
 let okSave = { n: 1, nInserted: 1, nModified: 0, ok: 1 }
 let genFailSave = (err) => {

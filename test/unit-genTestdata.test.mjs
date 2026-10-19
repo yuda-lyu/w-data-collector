@@ -3,7 +3,7 @@ import build from '../src/build.mjs'
 import genTestdata from '../src/genTestdata.mjs'
 
 
-//替身wo, 回傳形狀依w-orm系列規格(w-orm-lmdb/資料庫函數回傳定義計算.md T2、T4)
+//替身wo, 回傳形狀依w-orm系列規格(w-orm-lmdb/w-orm系列套件統一規格.md T2、T4)
 let okSave = { n: 1, nInserted: 1, nModified: 0, ok: 1 }
 
 let settings = {
