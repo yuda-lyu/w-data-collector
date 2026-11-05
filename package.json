@@ -1,9 +1,9 @@
 {
   "name": "w-data-collector",
-  "version": "1.0.55",
+  "version": "1.0.56",
   "main": "dist/w-data-collector.umd.js",
   "dependencies": {
-    "wsemi": "^1.9.49"
+    "wsemi": "^1.9.51"
   },
   "devDependencies": {
     "w-package-tools": "^1.1.23"
