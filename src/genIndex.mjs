@@ -66,8 +66,8 @@ function genIndex(fdSrc, fdIndex, opt = {}) {
         useCreateStorage = false //儲存至關聯資料庫例如mssql時需要createStorage
     }
 
-    //fsTreeFolder
-    let fps = fsTreeFolder(fdSrc)
+    //fsTreeFolder, 各資料表定義檔平放於fdSrc下, 僅列舉第1層(wsemi 1.9.80起第2參數為opt, 未給levelLimit則窮舉全部層級)
+    let fps = fsTreeFolder(fdSrc, { levelLimit: 1 })
     // console.log('fps', fps)
 
     //ms
